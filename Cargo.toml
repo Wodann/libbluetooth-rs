@@ -1,0 +1,19 @@
+[package]
+name = "libbluetooth"
+version = "0.1.0"
+authors = ["Remco Kuijper <remco.kuijper@gmail.com>"]
+license = "MIT/Apache-2.0"
+repository = "https://github.com/Wodann/libbluetooth-rs/"
+description = "Raw FFI bindings for Unix' libbluetooth."
+keywords = ["unix", "ffi", "bluetooth"]
+categories = ["external-ffi-bindings", "network-programming", "os::unix-apis"]
+edition = "2018"
+
+[features]
+debug = ["impl-debug"]
+impl-debug = []
+impl-default = []
+
+[dependencies]
+libc = "0.2"
+nix = "0.13.0"
