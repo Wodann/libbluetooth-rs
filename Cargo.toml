@@ -3,10 +3,12 @@ name = "libbluetooth"
 version = "0.1.0"
 authors = ["Remco Kuijper <remco.kuijper@gmail.com>"]
 license = "MIT/Apache-2.0"
-repository = "https://github.com/Wodann/libbluetooth-rs/"
 description = "Raw FFI bindings for Unix' libbluetooth."
+repository = "https://github.com/Wodann/libbluetooth-rs/"
 keywords = ["unix", "ffi", "bluetooth"]
 categories = ["external-ffi-bindings", "network-programming", "os::unix-apis"]
+readme = "README.md"
+include = ["Cargo.toml", "src/**/*.rs","README.md", "LICENSE-APACHE", "LICENSE-MIT"]
 edition = "2018"
 
 [features]
