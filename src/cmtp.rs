@@ -4,10 +4,10 @@ use libc::c_int;
 pub const CMTP_MINIMUM_MTU: i32 = 152;
 pub const CMTP_DEFAULT_MTU: i32 = 672;
 // CMTP ioctl defines
-pub const CMTPCONNADD: u64 = request_code_write!('C', 200, std::mem::size_of::<c_int>());
-pub const CMTPCONNDEL: u64 = request_code_write!('C', 201, std::mem::size_of::<c_int>());
-pub const CMTPGETCONNLIST: u64 = request_code_read!('C', 210, std::mem::size_of::<c_int>());
-pub const CMTPGETCONNINFO: u64 = request_code_read!('C', 211, std::mem::size_of::<c_int>());
+pub const CMTPCONNADD: libc::c_ulong = request_code_write!('C', 200, std::mem::size_of::<c_int>());
+pub const CMTPCONNDEL: libc::c_ulong = request_code_write!('C', 201, std::mem::size_of::<c_int>());
+pub const CMTPGETCONNLIST: libc::c_ulong = request_code_read!('C', 210, std::mem::size_of::<c_int>());
+pub const CMTPGETCONNINFO: libc::c_ulong = request_code_read!('C', 211, std::mem::size_of::<c_int>());
 pub const CMTP_LOOPBACK: i32 = 0;
 STRUCT! {struct cmtp_connadd_req {
     sock: c_int,    // Connected socket

@@ -23,10 +23,10 @@ pub const RFCOMM_LM_TRUSTED: i32 = 0x0008;
 pub const RFCOMM_LM_RELIABLE: i32 = 0x0010;
 pub const RFCOMM_LM_SECURE: i32 = 0x0020;
 pub const RFCOMM_MAX_DEV: i32 = 256;
-pub const RFCOMMCREATEDEV: u64 = request_code_write!('R', 200, std::mem::size_of::<c_int>());
-pub const RFCOMMRELEASEDEV: u64 = request_code_write!('R', 201, std::mem::size_of::<c_int>());
-pub const RFCOMMGETDEVLIST: u64 = request_code_read!('R', 210, std::mem::size_of::<c_int>());
-pub const RFCOMMGETDEVINFO: u64 = request_code_read!('R', 211, std::mem::size_of::<c_int>());
+pub const RFCOMMCREATEDEV: libc::c_ulong = request_code_write!('R', 200, std::mem::size_of::<c_int>());
+pub const RFCOMMRELEASEDEV: libc::c_ulong = request_code_write!('R', 201, std::mem::size_of::<c_int>());
+pub const RFCOMMGETDEVLIST: libc::c_ulong = request_code_read!('R', 210, std::mem::size_of::<c_int>());
+pub const RFCOMMGETDEVINFO: libc::c_ulong = request_code_read!('R', 211, std::mem::size_of::<c_int>());
 STRUCT! {struct rfcomm_dev_req {
     dev_id: i16,
     flags: u32,
