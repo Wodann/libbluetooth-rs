@@ -8,12 +8,12 @@ Add the following to your `cargo.toml`:
 
 ```toml
 [target.'cfg(unix)'.dependencies]
-libbluetooth = "0.1"
+libbluetooth = "0.2"
 ```
 
 ## No-std support
 
-This crate currently requires the Rust standard library.
+This crate does not require the Rust standard library.
 
 ## Platform support
 
@@ -27,7 +27,7 @@ libbluetooth is licensed under either of
 
  * Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
  * MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
- 
+
  at your option.
 
 ### Contribution

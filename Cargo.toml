@@ -1,8 +1,8 @@
 [package]
 name = "libbluetooth"
-version = "0.1.0"
-authors = ["Remco Kuijper <remco.kuijper@gmail.com>"]
-license = "MIT/Apache-2.0"
+version = "0.2.0"
+authors = ["Wodann <wodannson@gmail.com>"]
+license = "MIT OR Apache-2.0"
 description = "Raw FFI bindings for Unix' libbluetooth."
 repository = "https://github.com/Wodann/libbluetooth-rs/"
 keywords = ["unix", "ffi", "bluetooth"]
@@ -11,11 +11,12 @@ readme = "README.md"
 include = ["Cargo.toml", "src/**/*.rs","README.md", "LICENSE-APACHE", "LICENSE-MIT"]
 edition = "2018"
 
-[features]
-debug = ["impl-debug"]
-impl-debug = []
-impl-default = []
+build = "build.rs"
+links = "bluetooth"
 
 [dependencies]
 libc = "0.2"
-nix = "0.13.0"
+
+[build-dependencies]
+bindgen = "0.52.0"
+pkg-config = "0.3.17"

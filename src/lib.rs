@@ -1,30 +1,10 @@
 #![cfg(unix)]
-#![allow(bad_style)]
+#![no_std]
 
-#[macro_use]
-extern crate nix;
+#![allow(non_upper_case_globals)]
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 
-extern crate libc;
+use libc;
 
-#[macro_use]
-mod macros;
-
-pub mod bluetooth;
-pub mod bnep;
-pub mod cmtp;
-pub mod hci;
-pub mod hci_lib;
-pub mod hidp;
-pub mod l2cap;
-pub mod rfcomm;
-pub mod sco;
-pub mod sdp;
-pub mod sdp_lib;
-
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
-}
+include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
