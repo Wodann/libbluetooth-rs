@@ -4,10 +4,10 @@ use libc::c_int;
 pub const HIDP_MINIMUM_MTU: i32 = 48;
 pub const HIDP_DEFAULT_MTU: i32 = 48;
 // HIDP ioctl defines
-pub const HIDPCONNADD: libc::c_ulong = request_code_write!('H', 200, std::mem::size_of::<c_int>());
-pub const HIDPCONNDEL: libc::c_ulong = request_code_write!('H', 201, std::mem::size_of::<c_int>());
-pub const HIDPGETCONNLIST: libc::c_ulong = request_code_read!('H', 210, std::mem::size_of::<c_int>());
-pub const HIDPGETCONNINFO: libc::c_ulong = request_code_read!('H', 211, std::mem::size_of::<c_int>());
+pub const HIDPCONNADD: c_int = request_code_write!('H', 200, std::mem::size_of::<c_int>());
+pub const HIDPCONNDEL: c_int = request_code_write!('H', 201, std::mem::size_of::<c_int>());
+pub const HIDPGETCONNLIST: c_int = request_code_read!('H', 210, std::mem::size_of::<c_int>());
+pub const HIDPGETCONNINFO: c_int = request_code_read!('H', 211, std::mem::size_of::<c_int>());
 pub const HIDP_VIRTUAL_CABLE_UNPLUG: i32 = 0;
 pub const HIDP_BOOT_PROTOCOL_MODE: i32 = 1;
 pub const HIDP_BLUETOOTH_VENDOR_ID: i32 = 9;

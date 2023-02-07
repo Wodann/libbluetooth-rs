@@ -70,11 +70,11 @@ STRUCT! {#[repr(packed)] struct bnep_ext_hdr {
     data: [u8; 0],
 }}
 // BNEP ioctl defines
-pub const BNEPCONNADD: libc::c_ulong = request_code_write!('B', 200, std::mem::size_of::<c_int>());
-pub const BNEPCONNDEL: libc::c_ulong = request_code_write!('B', 201, std::mem::size_of::<c_int>());
-pub const BNEPGETCONNLIST: libc::c_ulong = request_code_read!('B', 210, std::mem::size_of::<c_int>());
-pub const BNEPGETCONNINFO: libc::c_ulong = request_code_read!('B', 211, std::mem::size_of::<c_int>());
-pub const BNEPGETSUPPFEAT: libc::c_ulong = request_code_read!('B', 212, std::mem::size_of::<c_int>());
+pub const BNEPCONNADD: c_int = request_code_write!('B', 200, std::mem::size_of::<c_int>());
+pub const BNEPCONNDEL: c_int = request_code_write!('B', 201, std::mem::size_of::<c_int>());
+pub const BNEPGETCONNLIST: c_int = request_code_read!('B', 210, std::mem::size_of::<c_int>());
+pub const BNEPGETCONNINFO: c_int = request_code_read!('B', 211, std::mem::size_of::<c_int>());
+pub const BNEPGETSUPPFEAT: c_int = request_code_read!('B', 212, std::mem::size_of::<c_int>());
 pub const BNEP_SETUP_RESPONSE: i32 = 0;
 STRUCT! {struct bnep_connadd_req {
     sock: c_char,           // Connected socket
